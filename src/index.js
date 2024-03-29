@@ -43,7 +43,7 @@ function createDogCard(doggy) {
   const dogSection = document.querySelector(".main__dog-section");
   const main = document.querySelector("main");
   console.log(main);
-dogSection.innerHTML = ''
+  dogSection.innerHTML = "";
   main.append(dogSection);
 
   const header = document.createElement("h2");
@@ -51,12 +51,18 @@ dogSection.innerHTML = ''
   header.innerText = doggy.name;
   dogSection.append(header);
 
+  const dogSelect = document.createElement("li");
+  dogSelect.classList.add("dogs-list__button");
+  dogSelect.innerText = doggy.name;
+  
+
   const image = document.createElement("img");
   image.setAttribute("src", doggy.image);
   image.setAttribute("alt", "");
   console.log(image);
   dogSection.append(image);
 
+  
   const description = document.createElement("div");
   console.log(description);
   description.classList.add("main__dog-section__desc");
@@ -84,6 +90,9 @@ dogSection.innerHTML = ''
   nextp.append(em);
   dogSection.append(nextp);
   console.log(nextp);
+  const dogList = document.querySelector(".dogs-list");
+  console.log(dogList);
+
 
   const button = document.createElement("button");
   button.innerText = doggy.isGoodDog;
@@ -96,8 +105,7 @@ dogSection.innerHTML = ''
     button.innerText = "Bad dog!";
   }
 
-  dogs.addEventListener("click", () => {
-    main.innerHTML = "";
+
     const dogHeader = document.createElement("h2");
     dogHeader.innerText = "Add a new Dog";
     dogSection.append(dogHeader);
@@ -143,5 +151,5 @@ dogSection.innerHTML = ''
     form.append(submit);
 
     console.log(form);
-  });
+  
 }
